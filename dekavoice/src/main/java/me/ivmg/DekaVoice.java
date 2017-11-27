@@ -62,7 +62,7 @@ public class DekaVoice {
             MediaConverter.convertVideoToAudio(context, videoFile, new ConverterCallback() {
                 @Override
                 public void onSuccess(File file) {
-                    RequestBody requestBody = RequestBody.create(MediaType.parse("audio/wav"), file);
+                    RequestBody requestBody = RequestBody.create(MediaType.parse("audio/mpeg3"), file);
                     NetworkClient.getInstance().getTranscription(requestBody).enqueue(new Callback<VoiceResult>() {
                         @Override
                         public void onResponse(@NonNull Call<VoiceResult> call, @NonNull retrofit2.Response<VoiceResult> response) {

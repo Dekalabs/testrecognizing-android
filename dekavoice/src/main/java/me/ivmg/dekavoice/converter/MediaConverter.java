@@ -22,7 +22,7 @@ public class MediaConverter {
 
         final String fullFilePath = context.getFilesDir().getAbsolutePath() + "/" + fileName;
 
-        String textCommand = String.format("-i %s -f wav -ab 16000 -vn %s", sourceFile, fullFilePath);
+        String textCommand = String.format("-i %s -f mp3 -ab 16000 -vn %s", sourceFile, fullFilePath);
         String[] command = textCommand.split(" ");
 
         ffmpeg.execute(command, new FFmpegExecuteResponseHandler() {

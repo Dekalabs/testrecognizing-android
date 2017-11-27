@@ -7,7 +7,7 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 public interface Api {
-    @Headers("Content-Type: audio/wav")
+    @Headers("Content-Type: audio/mpeg3")
     @POST("speech?v=20171123")
     Call<VoiceResult> getTranscription(@Body RequestBody wavFile);
 }

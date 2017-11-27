@@ -3,6 +3,7 @@ package me.ivmg.dekavoice.service;
 import android.support.annotation.NonNull;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import me.ivmg.dekavoice.BuildConfig;
 import okhttp3.Interceptor;
@@ -21,7 +22,9 @@ public class NetworkClient {
 
     public NetworkClient(final String apiKey) {
 
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        OkHttpClient.Builder builder = new OkHttpClient.Builder()
+                .connectTimeout(120, TimeUnit.SECONDS)
+                .readTimeout(120, TimeUnit.SECONDS);
 
         if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();

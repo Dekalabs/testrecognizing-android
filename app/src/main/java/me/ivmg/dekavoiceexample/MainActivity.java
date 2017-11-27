@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public void onError(String error) {
-
+                                Log.e("Error", error);
                             }
 
                             @Override
